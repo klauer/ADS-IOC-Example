@@ -13,6 +13,12 @@ VAR
 	iCycle : INT;
 
 	{attribute 'pytmc' := '
+		pv: ADS_TST:nSignedInt8
+		io: io
+	'}
+	nSignedInt8 : SINT;
+	
+	{attribute 'pytmc' := '
 		pv: ADS_TST:diCycle
 		io: o
 		pv: ADS_TST:ReadOnly:diCycle
@@ -129,10 +135,11 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF bArray[1] = TRUE THEN
+      <ST><![CDATA[iCycle := iCycle + 1;
+
+IF bArray[1] = TRUE THEN
 	is_true := TRUE;
 	is_false := FALSE;
-
 else
 	is_true := FALSE;
 	is_false := TRUE;
@@ -142,10 +149,10 @@ END_IF
 val := bArray[1];]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="265" Count="1" />
       <LineId Id="2" Count="0" />
       <LineId Id="122" Count="0" />
       <LineId Id="125" Count="0" />
-      <LineId Id="123" Count="0" />
       <LineId Id="136" Count="2" />
       <LineId Id="134" Count="1" />
       <LineId Id="133" Count="0" />
