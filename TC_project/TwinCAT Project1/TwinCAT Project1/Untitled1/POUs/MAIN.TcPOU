@@ -12,6 +12,12 @@ VAR
 	'}
 	iCycle : INT;
 
+		{attribute 'pytmc' := '
+		pv: ADS_TST:nSignedInt8
+		io: io
+	'}
+	nSignedInt8 : INT;
+	
 	{attribute 'pytmc' := '
 		pv: ADS_TST:diCycle
 		io: o
